@@ -1,0 +1,61 @@
+﻿@page
+@model BookListRazor.CreateModel
+
+
+<br />
+
+<h2 class="text-info">Add New Book</h2>
+<br />
+
+<div class="container col-8" style="padding:30px;border:2px solid #808080">
+    <form method="post" class="text-center">
+        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="row form-group">
+            <div class="col-2">
+                <label asp-for="Book.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Name" class="form-control" />
+                <span asp-validation-for="Book.Name" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <div class="col-2">
+                <label asp-for="Book.Author"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Author" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-2">
+                <label asp-for="Book.ISBN"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.ISBN" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-2">
+                <label asp-for="Book.Price"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Price" class="form-control" />
+                <span asp-validation-for="Book.Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3 offset-2">
+                <input type="submit" value="Add" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Abort</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
